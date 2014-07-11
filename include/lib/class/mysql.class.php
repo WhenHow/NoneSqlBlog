@@ -17,7 +17,7 @@ class mysql {
         return self::$_instance;
     }
 
-    public function mysql()
+    /*public function mysql()
     {
         if(!function_exists('mysql_connect'))
         {
@@ -53,9 +53,9 @@ class mysql {
 
             @mysql_select_db(DB_NAME,$this->_conn) or die(MYSQL_ERROR_UNKOWN_DATABASE_NAME);
         }
-    }
+    }*/
 
-    public function doQuery($sql)
+    /*public function doQuery($sql)
     {
         $QueryResult = mysql_query($sql);
 
@@ -69,7 +69,32 @@ class mysql {
     public function fetchArray($QuerySet)
     {
         return @mysql_fetch_array($QuerySet);
+    }*/
+
+    public function doQuery($sql)
+    {
+        $TableDir = MY_ROOT."/DataBase/".$sql['table'];
+        $TableFile = $TableDir."/".$sql["SearchContent"];
+
+        if(!empty($sql['table'])&&file_exists($TableFile))
+        {
+           return explode(SPERATER_MARK,file_get_contents($TableFile));
+        }else
+        {
+            myMsg('can not find table:'.$TableFile);
+            return null;
+        }
     }
+
+    public function fetchArray($QuerySet)
+    {
+        return @mysql_fetch_array($QuerySet);
+    }
+
+
+
+
+
 
     public function fetchRow($QuerySet)
     {

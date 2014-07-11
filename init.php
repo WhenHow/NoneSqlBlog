@@ -29,6 +29,7 @@
     //header('Content-Type: text/html; charset=UTF-8');
     //echo('shit');
     //header("location:index.php");
+    define('SPERATER_MARK','<EndMark>');
     require_once(MY_ROOT.'/config.php');
     require_once(MY_ROOT.'/include/lib/BaseFunction.php');
 ?>

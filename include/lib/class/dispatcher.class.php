@@ -7,8 +7,12 @@
  */
 class dispatcher
 {
+    /*router dispatcher. Handel any request by your your url */
     private $_module = '';
     private $_method = '';
     private $_params = '';
+
+
+
 }
 ?>

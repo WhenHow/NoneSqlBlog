@@ -35,9 +35,13 @@ EOT;
 
     function __autoload($class)
     {
-        if(file_exists(MY_ROOT.'/include/lib/class/'.$class.'.class.php'))
-        {
+        if(file_exists(MY_ROOT.'/include/lib/class/'.$class.'.class.php')){
             require_once(MY_ROOT.'/include/lib/class/'.$class.'.class.php');
+        }
+        else if(file_exists(MY_ROOT.'/include/lib/model/'.$class.'.class.php')){
+            require_once(MY_ROOT.'/include/lib/model/'.$class.'.class.php');
+        }else if(file_exists(MY_ROOT.'/include/controller/'.$class.'.class.php')){
+            require_once(MY_ROOT.'/include/controller/'.$class.'.class.php');
         }
     }
 

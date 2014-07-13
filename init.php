@@ -30,6 +30,8 @@
     //echo('shit');
     //header("location:index.php");
     define('SPERATER_MARK','<EndMark>');
+    define('TPLS_PATH', MY_ROOT.'/include/templates');
+    define('TEMPLATE_PATH', TPLS_PATH.'/default');
     require_once(MY_ROOT.'/config.php');
     require_once(MY_ROOT.'/include/lib/BaseFunction.php');
 ?>

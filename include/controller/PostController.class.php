@@ -8,6 +8,7 @@
 define("POST_TITLE",0);
 define("POST_CONTENT",1);
 define("COMMENT_LIMIT",10);
+define("");
 
 class PostController {
 
@@ -27,8 +28,18 @@ class PostController {
 
         $blog = new PostModel();
         $BlogContent = $blog->fetchPostById($BlogId);
-        $comments = new CommentModel();
-        $CommentsContent = $comments->getComments($BlogId,COMMENT_LIMIT);
+        //$comments = new CommentModel();
+        //$CommentsContent = $comments->getComments($BlogId,COMMENT_LIMIT);
+
+        $PostTitle = $BlogContent[0];
+        $PostContent = $BlogContent[1];
+
+        $HeadTitle = $BlogContent[2];
+        $HeadDescription = $BlogContent[3];
+        $HeadKeyWords = $BlogContent[4];
+        $HeadAuthor = $BlogContent[5];
+
+
 
 
     }

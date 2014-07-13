@@ -7,6 +7,6 @@
  */
     define('MY_ROOT',dirname(__FILE__));
     require_once(MY_ROOT.'/init.php');
-    $DB = database::getInstance();
-    $SearchArray = $DB->doQuery(array("table"=>"Post","SearchContent"=>"1"));
+    $router = dispatcher::getInstance();
+    $router->dipatch();
 ?>

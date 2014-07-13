@@ -25,8 +25,8 @@ class option {
                 'reg_0' => '|^.*/\?action=cal|',
             ),
             array(
-                'model' => 'Log_Controller',
-                'method' => 'displayContent',
+                'model' => 'PostController',
+                'method' => 'displayPostContent',
                 'reg_0' => '|^.*/\?(post)=(\d+)(&(comment-page)=(\d+))?([\?&].*)?$|',
                 'reg_1' => '|^.*/(post)-(\d+)\.html(/(comment-page)-(\d+))?/?([\?&].*)?$|',
                 'reg_2' => '|^.*/(post)/(\d+)(/(comment-page)-(\d+))?/?$|',

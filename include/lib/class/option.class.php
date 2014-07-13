@@ -57,7 +57,7 @@ class option {
                 'reg' => '|^.*/(author)/(\d+)/?((page)/(\d+))?/?([\?&].*)?$|',
             ),
             array(
-                'model' => 'Log_Controller',
+                'model' => 'PostController',
                 'method' => 'display',
                 'reg_0' => '|^.*/\?(page)=(\d+)([\?&].*)?$|',
                 'reg' => '|^.*/(page)/(\d+)/?([\?&].*)?$|',
@@ -78,12 +78,12 @@ class option {
                 'reg_0' => '|^.*/\?(plugin)=([\w\-]+).*([\?&].*)?$|',
             ),
             array(
-                'model' => 'Log_Controller',
+                'model' => 'PostController',
                 'method' => 'displayContent',
                 'reg_0' => '|^.*?/([^/\.=\?]+)(\.html)?(/(comment-page)-(\d+))?/?([\?&].*)?$|',
             ),
             array(
-                'model' => 'Log_Controller',
+                'model' => 'PostController',
                 'method' => 'display',
                 'reg_0' => '|^/?([\?&].*)?$|',
             ),

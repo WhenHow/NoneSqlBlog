@@ -11,6 +11,6 @@ class PostController {
 
     public function displayPostContent($parameters)
     {
-
+        echo('hehe');
     }
 } 

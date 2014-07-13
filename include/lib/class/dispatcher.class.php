@@ -17,7 +17,7 @@ class dispatcher
 
     public function dispatcher()
     {
-        $this->$_path = $this->_setPath();
+        $this->_path = $this->_setPath();
         $this->_routingTable = option::getRoutingTable();
         $UrlMode = 2;
         $reg = '';

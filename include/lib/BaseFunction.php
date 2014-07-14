@@ -50,3 +50,8 @@ EOT;
         header('location:'.$url);
         exit;
     }
+
+    function ArraySortDesc($array)
+    {
+        return rsort($array);
+    }

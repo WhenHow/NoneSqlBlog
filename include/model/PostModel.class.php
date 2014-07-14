@@ -11,9 +11,21 @@ class PostModel{
         return $this->DB->doQuery(array("table"=>"Post","SearchContent"=>$PostId));
     }
 
-    public function getPostIds()
+    public  static function getPostIds()
     {
+        $FileArray = array();
+        $CurrentDir = opendir(MY_ROOT.'/DataBase/post');
 
+        while($file = readdir($CurrentDir))
+        {
+            if($file == '.'|| $file == '..')
+                continue;
+            $SubFile = intval($file);
+            array_push($FileArray,$SubFile);
+        }
+
+        closedir($CurrentDir);
+        return $FileArray;
     }
 
 }

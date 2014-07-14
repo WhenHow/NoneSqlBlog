@@ -31,7 +31,7 @@
     //header("location:index.php");
     require_once(MY_ROOT.'/config.php');
 
-    define('SPERATER_MARK','<EndMark>');
+    define('SPERATER_MARK',"<EndMark>\r\n");
     define('TPLS_PATH', MY_ROOT.'/include/template');
     define('TEMPLATE_PATH', TPLS_PATH.'/default');
     define('TPLS_URL', BLOG_URL.'include/template/default');

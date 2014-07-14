@@ -29,9 +29,13 @@
     //header('Content-Type: text/html; charset=UTF-8');
     //echo('shit');
     //header("location:index.php");
-    define('SPERATER_MARK','<EndMark>');
-    define('TPLS_PATH', MY_ROOT.'/include/templates');
-    define('TEMPLATE_PATH', TPLS_PATH.'/default');
     require_once(MY_ROOT.'/config.php');
+
+    define('SPERATER_MARK','<EndMark>');
+    define('TPLS_PATH', MY_ROOT.'/include/template');
+    define('TEMPLATE_PATH', TPLS_PATH.'/default');
+    define('TPLS_URL', BLOG_URL.'include/template/default');
+    define('TEMPLATE_URL', 	TPLS_URL.'/');
+
     require_once(MY_ROOT.'/include/lib/BaseFunction.php');
 ?>

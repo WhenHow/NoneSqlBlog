@@ -5,7 +5,7 @@
 <meta name="keywords" content="<?php echo($HeadKeyWords)?>" />
 <meta name="description" content="<?php echo($HeadDescription) ?>" />
 <meta name="author" content="<?php echo($HeadAuthor) ?>" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="<?php echo(TEMPLATE_URL."style.css")?>" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
 <div id="header-wrapper">

@@ -8,14 +8,13 @@
 define("POST_TITLE",0);
 define("POST_CONTENT",1);
 define("COMMENT_LIMIT",10);
-define("");
 
 class PostController {
 
     public function displayPostContent($parameters)
     {
 
-        $CommentPage = isset($parameters[4])&&$parameters[4] == 'comment-page')? intval($parameters[5]):1;
+        $CommentPage = isset($parameters[4])&&$parameters[4] == 'comment-page'? intval($parameters[5]):1;
         $BlogId = 0;
         if($parameters[1]=="post"){
             $BlogId = isset($parameters[2])? intval($parameters[2]):0;
@@ -38,6 +37,8 @@ class PostController {
         $HeadDescription = $BlogContent[3];
         $HeadKeyWords = $BlogContent[4];
         $HeadAuthor = $BlogContent[5];
+
+        require_once(view::getView('post.php'));
 
 
 

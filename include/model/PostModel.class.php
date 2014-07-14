@@ -1,4 +1,4 @@
-<?
+<?php
 class PostModel{
     public  $DB = null;
     public function PostModel()
@@ -8,6 +8,6 @@ class PostModel{
 
     public function fetchPostById($PostId)
     {
-        return $DB->doQuery(array("table"=>"Post","SearchContent"=>$PostId));
+        return $this->DB->doQuery(array("table"=>"Post","SearchContent"=>$PostId));
     }
 }

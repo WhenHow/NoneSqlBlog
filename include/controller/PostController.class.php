@@ -38,9 +38,10 @@ class PostController {
         $HeadKeyWords = $BlogContent[4];
         $HeadAuthor = $BlogContent[5];
 
-        $arrays = ArraySortDesc(PostModel::getPostIds());
+        $arrays = PostModel::getPostIds();
+        ArraySortDesc($arrays);
+
         require_once(view::getView('post.php'));
     }
-
 
 }

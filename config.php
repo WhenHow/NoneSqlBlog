@@ -5,6 +5,7 @@
  * Date: 14-7-8
  * Time: 下午3:11
  */
+define('URL_MODE','2');
 define('BLOG_URL','http://192.168.10.5/NosqlBlog/');
 //mysql database address
 define('DB_HOST','localhost');

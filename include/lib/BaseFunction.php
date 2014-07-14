@@ -51,7 +51,7 @@ EOT;
         exit;
     }
 
-    function ArraySortDesc($array)
+    function ArraySortDesc(&$array)
     {
-        return rsort($array);
+         rsort($array);
     }

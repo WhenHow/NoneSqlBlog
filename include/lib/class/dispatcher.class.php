@@ -19,7 +19,7 @@ class dispatcher
     {
         $this->_path = $this->_setPath();
         $this->_routingTable = option::getRoutingTable();
-        $UrlMode = 2;
+        $UrlMode = intval(URL_MODE);
         $reg = '';
         foreach($this->_routingTable as $route)
         {

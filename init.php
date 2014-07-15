@@ -29,11 +29,12 @@
     //header('Content-Type: text/html; charset=UTF-8');
     //echo('shit');
     //header("location:index.php");
+    define('MY_ROOT',dirname(__FILE__));
     require_once(MY_ROOT.'/config.php');
 
     define('SPERATER_MARK',"<EndMark>\r\n");
     define('TPLS_PATH', MY_ROOT.'/include/template');
-    define('TEMPLATE_PATH', TPLS_PATH.'/default');
+
     define('TPLS_URL', BLOG_URL.'include/template/default');
     define('TEMPLATE_URL', 	TPLS_URL.'/');
     define('SIDE_BOX_LIMIT',5);

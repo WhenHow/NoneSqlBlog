@@ -5,4 +5,6 @@
  * Date: 14-7-15
  * Time: 下午4:02
  */
-define('TEMPLATE_PATH', EMLOG_ROOT.'/admin/views/');
+require_once("../init.php");
+define('TEMPLATE_PATH', MY_ROOT.'/admin/view/');
+$action = isset($_GET['action']) ? addslashes($_GET['action']) : '';

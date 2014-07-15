@@ -7,5 +7,5 @@
  */
 require_once("./global.php");
 if ($action == '') {
-    require_once(View::getView('ShowPosts.php'));
+    require_once('./ShowPosts.php');
 }

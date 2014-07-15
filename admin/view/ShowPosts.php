@@ -17,18 +17,24 @@
 <thead>
 <tr>
     <th width="511" colspan="2"><b>标题</b></th>
+    <th width="100"><b>作者</b></th>
     <th width="100"><b>文章ID</b></th>
 </tr>
 </thead>
 <tbody>
+<?php
+    for($i = 0;$i<count($PostArray);$i++){
+?>
 <tr>
-    <td width="21"><input type="checkbox" name="blog[]" value="45" class="ids" /></td>
-    <td width="490"><a href="write_log.php?action=edit&gid=45">豆腐干豆腐</a>
+    <td width="21"><input type="checkbox" name="blog[]" value="<?php echo($PostArray[$i]['PostId']);?>" class="ids" /></td>
+    <td width="490"><a href="write_log.php?action=edit&gid=<?php echo($PostArray[$i]['PostId']);?>"><?php echo($PostArray[$i]['PostTitle']);?></a>
             	              <span style="display:none; margin-left:8px;">
 		      </span>
     </td>
-    <td><a href="./admin_log.php?uid=1">root</a></td>
+    <td><?php echo($PostArray[$i]['HeadAuthor']);?></td>
+    <td><?php echo($PostArray[$i]['PostId']);?></td>
 </tr>
+<?php }?>
 </tbody>
 </table>
 <input name="operate" id="operate" value="" type="hidden" />
@@ -37,6 +43,10 @@
     <a href="javascript:logact('del');" class="care">删除</a>
 </div>
 </form>
+    <div id="post_button">
+       <a href="WritePost.php?action=add""> <input type="submit" value="发布文章"  class="button" /></a>
+    </div>
+</div>
 <script>
     $(document).ready(function(){
         $("#adm_log_list tbody tr:odd").addClass("tralt_b");

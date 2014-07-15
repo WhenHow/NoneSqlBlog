@@ -13,7 +13,7 @@
 
     <div id="post" style="MARGIN-RIGHT: auto; MARGIN-LEFT: auto; ">
         <div class=containertitle><b>写文章</b><span id="msg_2"></span></div>
-        <form action="SaveLog.php?action=add" method="post" enctype="multipart/form-data" id="addlog" name="addlog">
+        <form action="SavePost.php?action=add" method="post" enctype="multipart/form-data" id="addlog" name="addlog">
 
             <label for="title" id="title_label">输入文章标题</label>
             <input type="text" maxlength="200" name="title" id="title"/>

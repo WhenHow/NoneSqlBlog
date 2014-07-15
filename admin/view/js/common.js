@@ -120,12 +120,7 @@ function checkform(){
         return false;
     }
 
-    if(c=="")
-    {
-        alert("文章不能为空");
-        $("#content").focus();
-        return false;
-    }
+
     if (t==""){
 		alert("标题不能为空");
 		$("#title").focus();

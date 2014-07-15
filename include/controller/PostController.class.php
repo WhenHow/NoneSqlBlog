@@ -27,8 +27,8 @@ class PostController {
 
         $blog = new PostModel();
         $BlogContent = $blog->fetchPostById($BlogId);
-        //$comments = new CommentModel();
-        //$CommentsContent = $comments->getComments($BlogId,COMMENT_LIMIT);
+
+
 
         $PostTitle = $BlogContent[0];
         $PostContent = $BlogContent[1];
@@ -56,6 +56,13 @@ class PostController {
             $values[$i] = array('PostId'=>$arrays[$i],'PostTitle'=>$TitleArray[$i],'Url'=>$UrlArray[$i]);
 
         return $values;
+    }
+
+    public function display()
+    {
+        $arrays = PostModel::getPostIds();
+        $SideContent = $this->getSideContent($arrays);
+        require_once(view::getView('home.php'));
     }
 
 }

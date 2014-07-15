@@ -54,14 +54,11 @@
 				<li>
 					<h2>Pellenteque ornare </h2>
 					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
+                        <?php
+                            for($i = 0; $i<count($SideContent)&&SIDE_BOX_LIMIT;$i++){
+                        ?>
+						<li><a href="<?php echo($SideContent[$i]['Url'])?>"><?php echo($SideContent[$i]['PostTitle'])?></a></li>
+                        <?php }?>
 					</ul>
 				</li>
 					</ul>

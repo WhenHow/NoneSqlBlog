@@ -36,6 +36,7 @@
     define('TEMPLATE_PATH', TPLS_PATH.'/default');
     define('TPLS_URL', BLOG_URL.'include/template/default');
     define('TEMPLATE_URL', 	TPLS_URL.'/');
+    define('SIDE_BOX_LIMIT',5);
 
     require_once(MY_ROOT.'/include/lib/BaseFunction.php');
 ?>

@@ -28,4 +28,15 @@ class PostModel{
         return $FileArray;
     }
 
+    public static function getPostTiitlesById($arrays,$limit)
+    {
+        $RetArray = array();
+        for($i = 0 ;$i < $limit&&$i<count($arrays);$i++)
+        {
+            $PostContent = database::getInstance()->doQuery(array("table"=>"Post","SearchContent"=>$arrays[$i]));
+            $RetArray[$i] = $PostContent[0];
+        }
+        return $RetArray;
+    }
+
 }

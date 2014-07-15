@@ -39,9 +39,23 @@ class PostController {
         $HeadAuthor = $BlogContent[5];
 
         $arrays = PostModel::getPostIds();
-        ArraySortDesc($arrays);
-
+        $SideContent = $this->getSideContent($arrays);
         require_once(view::getView('post.php'));
+    }
+
+    private function getSideContent($arrays)
+    {
+        ArraySortDesc($arrays);
+        $TitleArray = PostModel::getPostTiitlesById($arrays,SIDE_BOX_LIMIT);
+        $UrlArray = array();
+        for($i = 0 ;$i < SIDE_BOX_LIMIT&&$i<count($arrays);$i++)
+            $UrlArray[$i]= url::getPostDisplayContentUrl($arrays[$i]);
+
+        $values = array();
+        for($i = 0 ;$i < SIDE_BOX_LIMIT&&$i<count($arrays);$i++)
+            $values[$i] = array('PostId'=>$arrays[$i],'PostTitle'=>$TitleArray[$i],'Url'=>$UrlArray[$i]);
+
+        return $values;
     }
 
 }

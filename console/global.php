@@ -6,5 +6,5 @@
  * Time: 下午4:02
  */
 require_once("../init.php");
-define('TEMPLATE_PATH', MY_ROOT.'/admin/view/');
+define('TEMPLATE_PATH', MY_ROOT.'/console/view/');
 $action = isset($_GET['action']) ? addslashes($_GET['action']) : '';

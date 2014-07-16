@@ -11,4 +11,14 @@
     if($WritePostAction == "add")
     {
         include_once(view::getView("WritePost.php"));
+    }elseif($WritePostAction == "edit")
+    {
+        $arrays = PostModel::getPostById($_GET["gid"]);
+        if($arrays == null)
+        {
+            echo('文章不存在');
+            exit;
+        }
+
+        include_once(view::getView("EditPost.php"));
     }

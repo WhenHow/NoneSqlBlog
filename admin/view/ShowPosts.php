@@ -11,7 +11,7 @@
 <body>
 <div id="mainpage">
 
-<form action="admin_log.php?action=operate_log" method="post" name="form_log" id="form_log">
+<form action="ShowPosts.php?action=operate_log" method="post" name="form_log" id="form_log">
 <input type="hidden" name="pid" value="">
 <table width="100%" id="adm_log_list" class="item_list">
 <thead>
@@ -27,7 +27,7 @@
 ?>
 <tr>
     <td width="21"><input type="checkbox" name="blog[]" value="<?php echo($PostArray[$i]['PostId']);?>" class="ids" /></td>
-    <td width="490"><a href="write_log.php?action=edit&gid=<?php echo($PostArray[$i]['PostId']);?>"><?php echo($PostArray[$i]['PostTitle']);?></a>
+    <td width="490"><a href="WritePost.php?action=edit&gid=<?php echo($PostArray[$i]['PostId']);?>"><?php echo($PostArray[$i]['PostTitle']);?></a>
             	              <span style="display:none; margin-left:8px;">
 		      </span>
     </td>

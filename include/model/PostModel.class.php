@@ -13,7 +13,7 @@ class PostModel{
 
     public function addPost($PostId,$PostTitle,$PostContent,$HeadTitle,$PostDescription,$PostKeywords,$PostAuthor)
     {
-        $this->_writeToFile($PostId,$PostTitle,$PostContent,$HeadTitle,$PostDescription,$PostKeywords,$PostAuthor);
+        return $this->_writeToFile($PostId,$PostTitle,$PostContent,$HeadTitle,$PostDescription,$PostKeywords,$PostAuthor);
     }
     private function _writeToFile($PostId,$PostTitle,$PostContent,$HeadTitle,$PostDescription,$PostKeywords,$PostAuthor)
     {
@@ -32,8 +32,9 @@ class PostModel{
         $text=$text.$PostKeywords.SPERATER_MARK;
         $text=$text.$PostAuthor.SPERATER_MARK;
         //$text="\\xEF\\xBB\\xBF".$text;
-        fputs($f, $text);
+        $ret = fputs($f, $text);
         fclose($f);
+        return $ret;
     }
     public  static function getPostIds()
     {
@@ -74,6 +75,31 @@ class PostModel{
                                   "HeadAuthor"=>$PostContent[5]);
         }
         return $RetArray;
+    }
+    public static function getPostById($id)
+    {
+
+        $PostContent = database::getInstance()->doQuery(array("table"=>"Post","SearchContent"=>$id));
+        if($PostContent == null)
+            return null;
+
+        return array("PostId"=>$id,"PostTitle"=>$PostContent[0],"PostContent"=>$PostContent[1],
+            "HeadTitile"=>$PostContent[2],"HeadDescription"=>$PostContent[3],"HeadKeywords"=>$PostContent[4],
+            "HeadAuthor"=>$PostContent[5]);
+
+    }
+
+    public static function delPostById($id)
+    {
+        $FileDir = MY_ROOT."/DataBase/post/".$id;
+        if(file_exists($FileDir))
+        {
+            return unlink($FileDir);
+        }else
+        {
+            return false;
+        }
+
     }
 
 }

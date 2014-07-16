@@ -21,17 +21,44 @@ function addNewPost()
     $PostAuthor = isset($_POST['HeadAuthor'])?$_POST['HeadAuthor']:"";
 
     $PostObject = new PostModel();
-    $PostObject->addPost($PostId,$PostTitle,$PostContent,$HeadTitle,
+    return $PostObject->addPost($PostId,$PostTitle,$PostContent,$HeadTitle,
                             $PostDescription,$PostKeywords,$PostAuthor);
 
 }
+
+function editNewPost()
+{
+    $PostId = $_GET['id'];
+    $PostTitle = isset($_POST['title'])?$_POST['title']:"";
+    $PostContent = isset($_POST['content'])?$_POST['content']:"";
+    $HeadTitle = isset($_POST['HeadTitle'])?$_POST['HeadTitle']:"";
+    $PostDescription = isset($_POST['HeadDescription'])?$_POST['HeadDescription']:"";
+    $PostKeywords = isset($_POST['HeadKeywords'])?$_POST['HeadKeywords']:"";
+    $PostAuthor = isset($_POST['HeadAuthor'])?$_POST['HeadAuthor']:"";
+
+    $PostObject = new PostModel();
+    return $PostObject->addPost($PostId,$PostTitle,$PostContent,$HeadTitle,
+        $PostDescription,$PostKeywords,$PostAuthor);
+
+}
+
 $SavePostAction = isset($_GET["action"])?$_GET["action"]:"";
 switch($SavePostAction)
 {
     case 'add':
-        addNewPost();
+        if(addNewPost()== false)
+            echo('文章发表失败');
+        else{
+            header('location:ShowPosts.php');
+            exit;
+        }
         break;
-    default:
-        echo('hehe');
+    case 'edit':
+        if(editNewPost()== false)
+            echo('文章发表失败');
+        else{
+            header('location:ShowPosts.php');
+            exit;
+        }
         break;
 }

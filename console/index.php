@@ -6,6 +6,6 @@
  * Time: 下午1:12
  */
 require_once("./global.php");
-if ($action == '') {
+if (IS_LOGIN) {
     require_once('./ShowPosts.php');
 }

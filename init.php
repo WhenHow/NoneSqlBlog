@@ -32,6 +32,7 @@
     define('MY_ROOT',dirname(__FILE__));
     require_once(MY_ROOT.'/config.php');
 
+
     define('SPERATER_MARK',"<EndMark>\r\n");
     define('TPLS_PATH', MY_ROOT.'/include/template');
 
@@ -40,4 +41,6 @@
     define('SIDE_BOX_LIMIT',5);
 
     require_once(MY_ROOT.'/include/lib/BaseFunction.php');
+
+    define('IS_LOGIN',	login::isLogin());
 ?>

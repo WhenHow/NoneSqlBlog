@@ -6,6 +6,8 @@
  * Time: 下午11:19
  */
     require_once('global.php');
+    if(!IS_LOGIN )
+        exit;
 
     $WritePostAction = isset($_GET["action"])?$_GET["action"]:"";
     if($WritePostAction == "add")

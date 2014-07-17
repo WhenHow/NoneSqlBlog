@@ -10,7 +10,7 @@
 <form name="f" method="post" action="./index.php?action=login">
     <div class="login-main">
         <div class="login-top"></div>
-        <div class="login-logo"><img src="./view/images/login_logo.png"  width="294" height="68" /></div>
+        <div class="login-logo"></div>
         <div class="login-input">
             <span>用户名</span>
             <div><input type="text" name="user" id="user" /></div>

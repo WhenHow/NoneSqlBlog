@@ -8,6 +8,8 @@
 
 
 require_once("global.php");
+if(!IS_LOGIN)
+   exit;
 function addNewPost()
 {
     $ids = PostModel::getPostIds();

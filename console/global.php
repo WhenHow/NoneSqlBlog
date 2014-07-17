@@ -17,9 +17,9 @@ if($action == 'login')
     $img_code = isset($_POST['imgcode']) ? addslashes(trim(strtoupper($_POST['imgcode']))) : '';
 
     $loginAuthRet = login::checkUser($username, $password, $img_code);
-    if($loginAuthRet == true)
+    if($loginAuthRet == 0)
     {
-        setAuthCookie($username,null);
+        login::setAuthCookie($username,null);
         header("location:./");
         exit;
     }

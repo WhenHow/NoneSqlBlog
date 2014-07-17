@@ -30,7 +30,7 @@ class login {
         if(empty($cookie))
             return false;
 
-        $CookieArray = explode($cookie,'|');
+        $CookieArray = explode('|',$cookie);
         if(count($CookieArray)!=3)
             return false;
 
@@ -54,7 +54,6 @@ class login {
 
     }
 
-    public s
 
     public static  function checkUser($username, $password, $img_code)
     {
@@ -62,7 +61,7 @@ class login {
         if (trim($username) == '' || trim($password) == '') {
             return false;
         }else{
-            $SessionCode = isset($_session['code'])?$_session['code']:"";
+            $SessionCode = isset($_SESSION['code'])?$_SESSION['code']:"";
             if($SessionCode!=$img_code||empty($SessionCode)){
                 return -1;
             }
